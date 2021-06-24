@@ -1,0 +1,41 @@
+Do(
+    CreateIndex(
+        {
+            name: "users_by_username",
+            unique: true,
+            serialized: true,
+            source: Collection("Users"),
+            terms: [
+                {
+                field: ["data", "Username"]
+                }
+            ]
+        }
+    ),
+    CreateIndex(
+        {
+            name: 'users_by_state',
+            unique: true,
+            serialized: true,
+            source: Collection("Users"),
+            terms: [
+                {
+                field: ["data", "State"]
+                }
+            ]
+        }
+    ),
+    CreateIndex(
+        {
+            name: 'contacts_by_userid',
+            unique: true,
+            serialized: true,
+            source: Collection("Contacts"),
+            terms: [
+                {
+                field: ["data", "UserId"]
+                }
+            ]
+        }
+    )
+)

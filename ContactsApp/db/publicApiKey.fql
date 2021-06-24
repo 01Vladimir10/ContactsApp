@@ -1,0 +1,9 @@
+CreateKey(
+    {
+        database: null,
+        role: Role("AnonymusUsers"),
+        data: {
+            name: "PublicApiKey"
+        }
+    }
+)

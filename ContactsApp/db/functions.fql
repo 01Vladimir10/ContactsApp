@@ -1,0 +1,99 @@
+Do(
+    CreateFunction(
+        {
+            name: 'SignIn',
+            role: 'server',
+            body: Query(
+                    Lambda(
+                        (Username, Password) => Let(
+                            {
+                                User: Get(
+                                    Match(
+                                        Index('users_by_username'), 
+                                        Username
+                                    )
+                                )
+                            },
+                            If (
+                                Select(
+                                    ['data','IsEnabled'], 
+                                    Var('User')
+                                ),
+                                Merge(
+                                    Login(
+                                        Select('ref', Var('User')),
+                                        {
+                                            password : Password
+                                        }
+                                    ),
+                                    Select('data', Var('User'))
+                                ),
+                                Abort('This account is disabled.')
+                            )
+                        )
+                    )
+                )
+        }
+    ),
+    CreateFunction(
+        {
+            name: 'CreateUser',
+            role: 'server',
+            body: Query(
+                Lambda(
+                    (User, Password) => Let(
+                        {
+                            UserId : NewId()
+                        },
+                        Select('data',                        
+                            Create(
+                                Ref(Collection("Users"), Var('UserId')),
+                                {
+                                    data: Merge(
+                                        User,
+                                        {
+                                            UserId: Var('UserId')
+                                        }
+                                    ),
+                                    credentials: {
+                                        password: Password
+                                    }
+                                }
+                            )
+                        )
+                    )
+                )
+            )
+        }
+    ),
+    CreateFunction(
+        {
+            name: 'CreateContact',
+            role: 'server',
+            body: Query(
+                    Lambda(
+                        Contact => Let(
+                            {
+                                UserId : Select(['data','UserId'], Get(CurrentIdentity())),
+                                ContactId: NewId()
+                            },
+                            Select('data',                        
+                                Create(
+                                    Ref(Collection("Contacts"), Var('ContactId')),
+                                    {
+                                        data: Merge(
+                                            Contact,
+                                            {
+                                                UserId: Var('UserId'),
+                                                ContactId: Var('ContactId')
+                                            }
+                                        )
+                                    }
+                                )
+                            )
+                        )
+                    )
+            )
+        }
+    )
+)

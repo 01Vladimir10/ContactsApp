@@ -1,0 +1,14 @@
+/* Create user */
+Call(Function('CreateUser'), {Username: 'sam@untome.com', DisplayName:'Sam Ulloa'}, 'Pass1234!')
+/* Sign In*/
+Call(Function('SignIn'), 'sam@untome.com', 'Pass1234!')
+/* Create Contact*/
+Call(Function('CreateContact'), {DisplayName: 'Vladimir Gonzalez'})
+/* Delete Contact*/
+Delete(Ref(Collection('Contacts'), 'contact-id'))
+/* Update Contact*/
+Update(Ref(Collection('Contacts'), 'contact-id'), {})
+/* Update Profile*/
+Update(Ref(Collection('Users'), 'user-id'), {})
+Update(CurrentIdentity(), {})
+/**/

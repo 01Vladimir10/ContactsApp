@@ -1,0 +1,16 @@
+Do(
+    CreateCollection(
+        {
+            name: 'Contacts',
+            history_days: 0,
+            ttl_days: null
+        }
+    ),
+    CreateCollection(
+        {
+            name: 'Users',
+            history_days: 0,
+            ttl_days: null
+        }
+    )
+)

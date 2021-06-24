@@ -1,0 +1,128 @@
+Do(
+    CreateRole(
+        {
+            ref: Role("AnonymusUsers"),
+            ts: 1624495147070000,
+            name: "AnonymusUsers",
+            privileges: [
+                {
+                resource: Ref(Ref("functions"), "CreateUser"),
+                actions: {
+                    call: true
+                }
+                },
+                {
+                resource: Ref(Ref("functions"), "SignIn"),
+                actions: {
+                    call: true
+                }
+                }
+            ],
+            membership: []
+        }
+    ),
+    CreateRole(
+        {
+            ref: Role("UsersRole"),
+            ts: 1624511439746000,
+            name: "UsersRole",
+            privileges: [
+                {
+                resource: Collection("Contacts"),
+                actions: {
+                    read: Query(
+                    Lambda(
+                        "ContactRef",
+                        Let(
+                        {
+                            ContactOwner: Select(
+                            ["data", "UserId"],
+                            Get(Var("ContactRef"))
+                            ),
+                            CurrentUser: Select(["data", "UserId"], Get(CurrentIdentity()))
+                        },
+                        Equals(Var("ContactOwner"), Var("CurrentUser"))
+                        )
+                    )
+                    ),
+                    write: Query(
+                    Lambda(
+                        ["oldContact", "newContact"],
+                        Equals(
+                        Select(["data", "UserId"], Var("oldContact")),
+                        Select(["data", "UserId"], Var("newContact")),
+                        Select(["data", "UserId"], Get(CurrentIdentity()))
+                        )
+                    )
+                    ),
+                    create: true,
+                    delete: Query(
+                    Lambda(
+                        "contactRef",
+                        Equals(
+                        Select(["data", "UserId"], Get(Var("contactRef"))),
+                        Select(["data", "UserId"], Get(CurrentIdentity()))
+                        )
+                    )
+                    ),
+                    history_read: Query(
+                    Lambda(
+                        "ContactRef",
+                        Let(
+                        {
+                            ContactOwner: Select(
+                            ["data", "UserId"],
+                            Get(Var("ContactRef"))
+                            ),
+                            CurrentUser: Select(["data", "UserId"], Get(CurrentIdentity()))
+                        },
+                        Equals(Var("ContactOwner"), Var("CurrentUser"))
+                        )
+                    )
+                    ),
+                    history_write: false,
+                    unrestricted_read: false
+                }
+                },
+                {
+                resource: Ref(Ref("functions"), "CreateContact"),
+                actions: {
+                    call: true
+                }
+                },
+                {
+                resource: Collection("Users"),
+                actions: {
+                    read: Query(
+                    Lambda("userRef", Equals(CurrentIdentity(), Var("userRef")))
+                    ),
+                    write: Query(
+                    Lambda(
+                        ["oldUser", "newUser"],
+                        Equals(
+                        Select(["data", "UserId"], Var("oldUser")),
+                        Select(["data", "UserId"], Var("newUser"))
+                        )
+                    )
+                    ),
+                    create: false,
+                    delete: false,
+                    history_read: false,
+                    history_write: false,
+                    unrestricted_read: false
+                }
+                }
+            ],
+            membership: [
+                {
+                resource: Collection("Users"),
+                predicate: Query(
+                    Lambda("userRef", Select(["data", "IsEnabled"], Get(Var("userRef"))))
+                )
+                }
+            ]
+            }
+
+
+    )
+)
