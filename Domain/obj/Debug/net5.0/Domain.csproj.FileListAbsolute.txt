@@ -10,3 +10,15 @@ C:\projects\ContactsApp\Domain\obj\Debug\net5.0\Domain.csproj.CoreCompileInputs.
 C:\projects\ContactsApp\Domain\obj\Debug\net5.0\Domain.dll
 C:\projects\ContactsApp\Domain\obj\Debug\net5.0\ref\Domain.dll
 C:\projects\ContactsApp\Domain\obj\Debug\net5.0\Domain.pdb
+D:\Users\Vladimir\RiderProjects\ContactsApp\Domain\bin\Debug\net5.0\Domain.deps.json
+D:\Users\Vladimir\RiderProjects\ContactsApp\Domain\bin\Debug\net5.0\Domain.dll
+D:\Users\Vladimir\RiderProjects\ContactsApp\Domain\bin\Debug\net5.0\ref\Domain.dll
+D:\Users\Vladimir\RiderProjects\ContactsApp\Domain\bin\Debug\net5.0\Domain.pdb
+D:\Users\Vladimir\RiderProjects\ContactsApp\Domain\obj\Debug\net5.0\Domain.csproj.AssemblyReference.cache
+D:\Users\Vladimir\RiderProjects\ContactsApp\Domain\obj\Debug\net5.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\Vladimir\RiderProjects\ContactsApp\Domain\obj\Debug\net5.0\Domain.AssemblyInfoInputs.cache
+D:\Users\Vladimir\RiderProjects\ContactsApp\Domain\obj\Debug\net5.0\Domain.AssemblyInfo.cs
+D:\Users\Vladimir\RiderProjects\ContactsApp\Domain\obj\Debug\net5.0\Domain.csproj.CoreCompileInputs.cache
+D:\Users\Vladimir\RiderProjects\ContactsApp\Domain\obj\Debug\net5.0\Domain.dll
+D:\Users\Vladimir\RiderProjects\ContactsApp\Domain\obj\Debug\net5.0\ref\Domain.dll
+D:\Users\Vladimir\RiderProjects\ContactsApp\Domain\obj\Debug\net5.0\Domain.pdb

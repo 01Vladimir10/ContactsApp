@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eLngTSXMAr2X4yNSulfyAFem29acGNwNTQEPaNCbeHqUvQlBuwHoOrMec9NaRVv/H5Q+crFO6LRgojpR1eKHXw==",
+  "dgSpecHash": "uDATAIEvx3aSs4LUSPStj59vFl3FJ+WK/ir0it5zaY40KkXawtCNUub68qERPUnCYknCSnXXB7oP80+iohFiZA==",
   "success": true,
-  "projectFilePath": "C:\\projects\\ContactsApp\\Domain\\Domain.csproj",
+  "projectFilePath": "D:\\Users\\Vladimir\\RiderProjects\\ContactsApp\\Domain\\Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

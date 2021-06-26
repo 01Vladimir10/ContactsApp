@@ -12,10 +12,12 @@ namespace FaunaAuthentication.Services
         {
             var data = await db.Query(expression);
             // decode and return the results
-            return string.IsNullOrEmpty(path) ? Decoder.Decode<T>(data) : Decoder.Decode<T>(path);
+            return string.IsNullOrEmpty(path) ? Decoder.Decode<T>(data) : Decoder.Decode<T>(data.At(path));
         }
 
         public static T To<T>(this Value value, string path = "")
             => string.IsNullOrEmpty(path) ? Decoder.Decode<T>(value) : Decoder.Decode<T>(value.At(path));
+
+        public static Value ToValue(this object input) => Encoder.Encode(input);
     }
 }

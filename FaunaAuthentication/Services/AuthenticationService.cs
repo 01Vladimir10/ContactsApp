@@ -3,17 +3,16 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Domain.Common;
 using Domain.Errors;
-using Domain.Model;
-using Domain.Services;
+using Domain.Identity;
 using FaunaDB.Client;
 using FaunaDB.Types;
 using static FaunaDB.Query.Language;
 
 namespace FaunaAuthentication.Services
 {
-    public class AuthenticationService : IAuthenticationService<AppUser>
+    public class AuthenticationService<TUser> : IAuthenticationService<TUser> 
+        where TUser : IIdentityUser
     {
-        
         private const string SignInFunction = "SignIn";
         public string DefaultAuthenticationToken { get; set; }
         public bool IsUserLoggedIn { get; set; }
@@ -30,15 +29,18 @@ namespace FaunaAuthentication.Services
                 _db = new FaunaClient(value, EndPoint, httpClient: HttpClient);
             }
         }
-        public AppUser User { get; set; }
+
+        public TUser User { get; set; }
+
         private FaunaClient _db;
-        public IUserManager<AppUser> UserManager { get; set; }
-        private readonly ILogger<AuthenticationService> _l;
+        public IUserManager<TUser> UserManager { get; set; }
+
+        private readonly ILogger<AuthenticationService<TUser>> _l;
         
-        public AuthenticationService(IUserManager<AppUser> manager, string defaultToken, HttpClient client = null, string endPoint = "https://db.fauna.com:443", ILogger<AuthenticationService> logger = null)
+        public AuthenticationService(IUserManager<TUser> manager, string defaultToken, HttpClient client = null, string endPoint = "https://db.fauna.com:443", ILogger<AuthenticationService<TUser>> logger = null)
         {
             HttpClient = client ?? new HttpClient();
-            _l = logger ?? new BasicLogger<AuthenticationService>();
+            _l = logger ?? new BasicLogger<AuthenticationService<TUser>>();
             EndPoint = endPoint;
             UserManager = manager;
             DefaultAuthenticationToken = defaultToken;
@@ -46,7 +48,7 @@ namespace FaunaAuthentication.Services
         }
 
 
-        public async Task<AppUser> SignInWithAuthToken(string token)
+        public async Task<TUser> SignInWithAuthToken(string token)
         {
             IsUserLoggedIn = false;
             try
@@ -67,7 +69,7 @@ namespace FaunaAuthentication.Services
             }
         }
 
-        public async Task<AppUser> SignUpAsync(AppUser user, string password)
+        public async Task<TUser> SignUpAsync(TUser user, string password)
         {
             try
             {
@@ -79,7 +81,8 @@ namespace FaunaAuthentication.Services
                 throw;
             }
         }
-        public async Task<AppUser> SignInAsync(string username, string password)
+
+        public async Task<TUser> SignInAsync(string username, string password)
         {
             try
             {
@@ -103,7 +106,7 @@ namespace FaunaAuthentication.Services
                 throw new InvalidCredentials();
             }
         }
-
+        
         private void HandleError(string action, Exception e)
         {
             action += $"=> {e.Message} => {e}";

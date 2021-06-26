@@ -15,11 +15,11 @@ namespace ConsoleClient
     class Program
     {
         public static readonly string DefaultToken = "fnAEMmSopXACA7m95-mzKsKLVuly_vUPP-iHBRcQ";
-        private AuthenticationService auth;
+        private AuthenticationService<AppUser> auth;
 
         public Program()
         {
-            auth = new AuthenticationService(new UserManager(DefaultToken), DefaultToken);
+            auth = new AuthenticationService<AppUser>(new UserManager<AppUser>(DefaultToken), DefaultToken);
         }
         
         static void Main(string[] args)

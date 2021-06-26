@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "xsXGjXtS7uUNeg7lS0YYzskiAU2nFNnZNEG8Dz+lA9tFeytkB65aoYuo7BGBMIEvgymJFlbCH1o6ykphUIs+HQ==",
+  "dgSpecHash": "WX5PQmY+duOeXyqBXXkx5qzzUxjvhX9BKji+k6Mvbm0Uw/hcqCd29e68qe4TSdqdQ9EfCOu2qlWq6fNHlh3IWg==",
   "success": true,
-  "projectFilePath": "C:\\projects\\ContactsApp\\ConsoleClient\\ConsoleClient.csproj",
+  "projectFilePath": "D:\\Users\\Vladimir\\RiderProjects\\ContactsApp\\ConsoleClient\\ConsoleClient.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\vladg\\.nuget\\packages\\faunadb.client\\4.0.0\\faunadb.client.4.0.0.nupkg.sha512",
-    "C:\\Users\\vladg\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+    "C:\\Users\\Vladimir\\.nuget\\packages\\faunadb.client\\4.0.0\\faunadb.client.4.0.0.nupkg.sha512",
+    "C:\\Users\\Vladimir\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],
   "logs": []
 }

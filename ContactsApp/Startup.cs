@@ -14,8 +14,8 @@ using Microsoft.Extensions.Hosting;
 using ContactsApp.Data;
 using ContactsApp.Utils;
 using Database.Services;
+using Domain.Identity;
 using Domain.Model;
-using Domain.Services;
 using FaunaAuthentication.Services;
 
 namespace ContactsApp
@@ -38,10 +38,10 @@ namespace ContactsApp
             services.AddSingleton<WeatherForecastService>();
             
             var apiKey = Configuration["DbApiKey"];
-            var manager = new UserManager(apiKey);
+            var manager = new UserManager<AppUser>(apiKey);
             
-            services.AddSingleton<IUserManager<AppUser>>(new UserManager(apiKey));
-            services.AddSingleton<IAuthenticationService<AppUser>>(new AuthenticationService(manager, apiKey, CreateCustomHttpClient()));
+            services.AddSingleton<IUserManager<AppUser>>(new UserManager<AppUser>(apiKey));
+            services.AddSingleton<IAuthenticationService<AppUser>>(new AuthenticationService<AppUser>(manager, apiKey, CreateCustomHttpClient()));
         }
 
         private HttpClient CreateCustomHttpClient() => new(new MessageHandler(new HttpClientHandler()));

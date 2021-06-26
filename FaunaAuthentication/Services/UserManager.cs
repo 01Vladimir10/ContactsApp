@@ -1,18 +1,18 @@
 ﻿using System.Net.Http;
 using System.Threading.Tasks;
+using Domain.Identity;
 using Domain.Model;
-using Domain.Services;
 using FaunaDB.Client;
 using FaunaDB.Types;
 using static FaunaDB.Query.Language;
 
-namespace Database.Services
+namespace FaunaAuthentication.Services
 {
-    public class UserManager : IUserManager<AppUser>
+    public class UserManager<T> : IUserManager<T> where T: IIdentityUser
     {
         private string _token;
-        public string EndPoint { get;}
-        public HttpClient HttpClient { get; }
+        private string EndPoint { get;}
+        private HttpClient HttpClient { get; }
 
         private const string UsersCollection = "Users";
         public string Token
@@ -36,24 +36,24 @@ namespace Database.Services
             Token = token;
         }
 
-        public async Task<AppUser> CreateUserAsync(AppUser user, string password)
+        public async Task<T> CreateUserAsync(T user, string password)
         {
             var data = Encoder.Encode(user);
-            var nUser = await _db.ExecuteQuery<AppUser>(Call(Function(CreateUserFunction), data, password));
+            var nUser = await _db.ExecuteQuery<T>(Call(Function(CreateUserFunction), data, password));
             return nUser;        
         }
 
-        public async Task<AppUser> UpdateUserAsync(AppUser user)
+        public async Task<T> UpdateUserAsync(T user)
         {
             var data = Encoder.Encode(user);
-            var updatedUser = await _db.ExecuteQuery<AppUser>(Update(Ref(Collection(UsersCollection), user.UserId), Obj("data", data)), "data");
+            var updatedUser = await _db.ExecuteQuery<T>(Update(Ref(Collection(UsersCollection), user.UserId), Obj("data", data)), "data");
             return updatedUser;
         }
 
-        public async Task<AppUser> UpdateUserAsync(AppUser user, string password)
+        public async Task<T> UpdateUserAsync(T user, string password)
         {
             var data = Encoder.Encode(user);
-            var result = await _db.ExecuteQuery<AppUser>(Update(
+            var result = await _db.ExecuteQuery<T>(Update(
                 Ref(Collection("Users"), user.UserId), 
                 Obj("data", data, "password", password)
                 ),
@@ -61,12 +61,12 @@ namespace Database.Services
             return result;
         }
 
-        public async Task<AppUser> GetUserAsync(string userId)
+        public async Task<T> GetUserAsync(string userId)
         {
-            return await _db.ExecuteQuery<AppUser>(Get(Ref(Collection(UsersCollection), userId)), "data");
+            return await _db.ExecuteQuery<T>(Get(Ref(Collection(UsersCollection), userId)), "data");
         }
 
-        public async Task DeleteUserAsync(AppUser user)
+        public async Task DeleteUserAsync(T user)
         {
             await _db.Query(Delete(Ref(Collection(UsersCollection), user.UserId)));
         }

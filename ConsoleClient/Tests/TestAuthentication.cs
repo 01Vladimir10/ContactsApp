@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Database.Services;
 using Domain.Common;
+using Domain.Model;
 using FaunaAuthentication.Services;
 
 namespace ConsoleClient.Tests
@@ -53,7 +54,7 @@ namespace ConsoleClient.Tests
         
         private async Task TestCredential(string username, string password)
         {
-            var service = new AuthenticationService(new UserManager(Token),  Token);
+            var service = new AuthenticationService<AppUser>(new UserManager<AppUser>(Token),  Token);
             await service.SignInAsync(username, password);
             await service.SignOutAsync();
         }
