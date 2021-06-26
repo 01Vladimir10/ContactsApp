@@ -1,0 +1,15 @@
+C:\projects\ContactsApp\FaunaAuthentication\bin\Debug\net5.0\FaunaAuthentication.deps.json
+C:\projects\ContactsApp\FaunaAuthentication\bin\Debug\net5.0\FaunaAuthentication.dll
+C:\projects\ContactsApp\FaunaAuthentication\bin\Debug\net5.0\ref\FaunaAuthentication.dll
+C:\projects\ContactsApp\FaunaAuthentication\bin\Debug\net5.0\FaunaAuthentication.pdb
+C:\projects\ContactsApp\FaunaAuthentication\bin\Debug\net5.0\Domain.dll
+C:\projects\ContactsApp\FaunaAuthentication\bin\Debug\net5.0\Domain.pdb
+C:\projects\ContactsApp\FaunaAuthentication\obj\Debug\net5.0\FaunaAuthentication.csproj.AssemblyReference.cache
+C:\projects\ContactsApp\FaunaAuthentication\obj\Debug\net5.0\FaunaAuthentication.GeneratedMSBuildEditorConfig.editorconfig
+C:\projects\ContactsApp\FaunaAuthentication\obj\Debug\net5.0\FaunaAuthentication.AssemblyInfoInputs.cache
+C:\projects\ContactsApp\FaunaAuthentication\obj\Debug\net5.0\FaunaAuthentication.AssemblyInfo.cs
+C:\projects\ContactsApp\FaunaAuthentication\obj\Debug\net5.0\FaunaAuthentication.csproj.CoreCompileInputs.cache
+C:\projects\ContactsApp\FaunaAuthentication\obj\Debug\net5.0\FaunaAuthentication.csproj.CopyComplete
+C:\projects\ContactsApp\FaunaAuthentication\obj\Debug\net5.0\FaunaAuthentication.dll
+C:\projects\ContactsApp\FaunaAuthentication\obj\Debug\net5.0\ref\FaunaAuthentication.dll
+C:\projects\ContactsApp\FaunaAuthentication\obj\Debug\net5.0\FaunaAuthentication.pdb

@@ -1,17 +1,32 @@
+@using Domain.Services
+@using Domain.Model
 @inherits LayoutComponentBase
+@inject IAuthenticationService<AppUser> AuthenticationService
+@inject NavigationManager NavigationManager
 
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
-
-    <div class="main">
-        <div class="top-row px-4">
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
-        </div>
-
-        <div class="content px-4">
-            @Body
-        </div>
+<div>
+    @if (AuthenticationService.IsUserLoggedIn)
+    {
+        <h1>Welcome</h1>
+    }
+    else
+    {
+        <a href="/login">Login</a>
+    }
+    <div>
+        @Body
     </div>
 </div>
+@code {
+    
+    protected override async Task OnInitializedAsync()
+    {
+        // if (!AuthenticationService.IsUserLoggedIn)
+        // {
+        //     NavigationManager.NavigateTo("/fetchdata");
+        //     return;
+        // }
+    }
+
+
+}

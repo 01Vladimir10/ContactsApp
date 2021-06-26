@@ -1,0 +1,17 @@
+/* Create user */
+Call(Function('CreateUser'), {Username: 'sam@untome.com', DisplayName:'TEST'}, 'Pass1234!')
+Call(Function('CreateUser'), {Username: 'enabled@test.com', DisplayName:'TEST', IsEnabled: true}, 'Pass1234!')
+Call(Function('CreateUser'), {Username: 'disabled@test.com', DisplayName:'TEST', IsEnabled: false}, 'Pass1234!')
+/* Sign In*/
+Call(Function('SignIn'), 'sam@untome.com', 'Pass1234!')
+Call(Function('SignIn'), 'sam@untome.com', 'Pass1234!')
+/* Create Contact*/
+Call(Function('CreateContact'), {DisplayName: 'Vladimir Gonzalez'})
+/* Delete Contact*/
+Delete(Ref(Collection('Contacts'), 'contact-id'))
+/* Update Contact*/
+Update(Ref(Collection('Contacts'), 'contact-id'), {})
+/* Update Profile*/
+Update(Ref(Collection('Users'), 'user-id'), {})
+Update(CurrentIdentity(), {})
+/**/

@@ -1,0 +1,41 @@
+﻿@page "/login"
+@using Domain.Services
+@using Domain.Model
+@inject IAuthenticationService<AppUser> AuthenticationService
+@inject NavigationManager NavigationManager;
+<div>
+    <div>
+        <input @bind-value="Username"/>
+    </div>
+    <div>
+        <input @bind-value="Password"/>
+    </div>
+    <div>
+        <button @onclick="SignIn">Login</button>
+    </div>
+    <div>
+        <p style="color: red;">@ErrorMessage</p>
+    </div>
+</div>
+
+@code {
+    public string ErrorMessage { get; set; }
+    private string Username { get; set; }
+    private string Password { get; set; }
+
+    private async Task SignIn()
+    {
+        try
+        {
+            var user = await AuthenticationService.SignInAsync(Username, Password);
+            if (user != null)
+                NavigationManager.NavigateTo("/");
+        }
+        catch (Exception e)
+        {
+            ErrorMessage = e.Message;
+        }
+        
+    }
+
+}

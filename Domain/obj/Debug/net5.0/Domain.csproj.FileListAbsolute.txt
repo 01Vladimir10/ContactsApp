@@ -1,0 +1,12 @@
+C:\projects\ContactsApp\Domain\bin\Debug\net5.0\Domain.deps.json
+C:\projects\ContactsApp\Domain\bin\Debug\net5.0\Domain.dll
+C:\projects\ContactsApp\Domain\bin\Debug\net5.0\ref\Domain.dll
+C:\projects\ContactsApp\Domain\bin\Debug\net5.0\Domain.pdb
+C:\projects\ContactsApp\Domain\obj\Debug\net5.0\Domain.csproj.AssemblyReference.cache
+C:\projects\ContactsApp\Domain\obj\Debug\net5.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\projects\ContactsApp\Domain\obj\Debug\net5.0\Domain.AssemblyInfoInputs.cache
+C:\projects\ContactsApp\Domain\obj\Debug\net5.0\Domain.AssemblyInfo.cs
+C:\projects\ContactsApp\Domain\obj\Debug\net5.0\Domain.csproj.CoreCompileInputs.cache
+C:\projects\ContactsApp\Domain\obj\Debug\net5.0\Domain.dll
+C:\projects\ContactsApp\Domain\obj\Debug\net5.0\ref\Domain.dll
+C:\projects\ContactsApp\Domain\obj\Debug\net5.0\Domain.pdb
