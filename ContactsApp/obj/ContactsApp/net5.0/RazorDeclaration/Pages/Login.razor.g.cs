@@ -84,14 +84,14 @@ using ContactsApp.Shared;
 #nullable disable
 #nullable restore
 #line 2 "D:\Users\Vladimir\RiderProjects\ContactsApp\ContactsApp\Pages\Login.razor"
-using Domain.Services;
+using Domain.Model;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 3 "D:\Users\Vladimir\RiderProjects\ContactsApp\ContactsApp\Pages\Login.razor"
-using Domain.Model;
+using Domain.Identity;
 
 #line default
 #line hidden

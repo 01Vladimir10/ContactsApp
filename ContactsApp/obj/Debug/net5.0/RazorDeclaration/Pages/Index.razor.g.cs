@@ -13,70 +13,70 @@ namespace ContactsApp.Pages
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "c:\projects\univeristy\ContactsApp\_Imports.razor"
+#line 1 "D:\Users\Vladimir\RiderProjects\ContactsApp\ContactsApp\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "c:\projects\univeristy\ContactsApp\_Imports.razor"
+#line 2 "D:\Users\Vladimir\RiderProjects\ContactsApp\ContactsApp\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "c:\projects\univeristy\ContactsApp\_Imports.razor"
+#line 3 "D:\Users\Vladimir\RiderProjects\ContactsApp\ContactsApp\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "c:\projects\univeristy\ContactsApp\_Imports.razor"
+#line 4 "D:\Users\Vladimir\RiderProjects\ContactsApp\ContactsApp\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "c:\projects\univeristy\ContactsApp\_Imports.razor"
+#line 5 "D:\Users\Vladimir\RiderProjects\ContactsApp\ContactsApp\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "c:\projects\univeristy\ContactsApp\_Imports.razor"
+#line 6 "D:\Users\Vladimir\RiderProjects\ContactsApp\ContactsApp\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "c:\projects\univeristy\ContactsApp\_Imports.razor"
+#line 7 "D:\Users\Vladimir\RiderProjects\ContactsApp\ContactsApp\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "c:\projects\univeristy\ContactsApp\_Imports.razor"
+#line 8 "D:\Users\Vladimir\RiderProjects\ContactsApp\ContactsApp\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "c:\projects\univeristy\ContactsApp\_Imports.razor"
+#line 9 "D:\Users\Vladimir\RiderProjects\ContactsApp\ContactsApp\_Imports.razor"
 using ContactsApp;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "c:\projects\univeristy\ContactsApp\_Imports.razor"
+#line 10 "D:\Users\Vladimir\RiderProjects\ContactsApp\ContactsApp\_Imports.razor"
 using ContactsApp.Shared;
 
 #line default

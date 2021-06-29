@@ -1,0 +1,40 @@
+.main[b-32bk22xpbf] {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+}
+.header[b-32bk22xpbf] {
+    height: 15%;
+}
+.body[b-32bk22xpbf] {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.message-layout[b-32bk22xpbf] {
+    flex: 1 1 70%;
+    height: 100%;
+    display: grid;
+    align-content: center;
+}
+.message-container[b-32bk22xpbf] {
+    margin-left: 4rem;
+}
+.main-message[b-32bk22xpbf] {
+    font-size: 3.5em;
+    font-weight: bolder;
+}
+.main-subtitle[b-32bk22xpbf] {
+    font-size: 1.35rem;
+    font-style: normal;
+    font-weight: lighter;
+}
+.auth-layout[b-32bk22xpbf] {
+    flex: 1 1 30%;
+    height: 100%;
+    display: grid;
+    min-width: 300px;
+    place-items: center;
+}

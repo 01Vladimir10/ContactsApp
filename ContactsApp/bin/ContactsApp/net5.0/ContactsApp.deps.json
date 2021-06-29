@@ -373,7 +373,6 @@
       },
       "FaunaAuthentication/1.0.0": {
         "dependencies": {
-          "Database": "1.0.0",
           "Domain": "1.0.0",
           "FaunaDB.Client": "4.0.0"
         },

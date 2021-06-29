@@ -58,6 +58,7 @@ namespace FaunaAuthentication.Services
                 var userRef = await _db.ExecuteQuery<RefV>(CurrentIdentity());
                 var user = await UserManager.GetUserAsync(userRef.Id);
                 if (user == null) throw new InvalidAuthenticationTokenException();
+                User = user;
                 IsUserLoggedIn = true;
                 return user;
             }
@@ -106,6 +107,7 @@ namespace FaunaAuthentication.Services
                 throw new InvalidCredentials();
             }
         }
+        
         
         private void HandleError(string action, Exception e)
         {

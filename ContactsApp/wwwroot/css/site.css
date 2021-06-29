@@ -1,7 +1,14 @@
 @import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
 
+:root {
+    --dark-color: #1D1818;
+    --light-color: white;
+    --error-color: #b50404;
+    --secondary-dark-color: #565454;
+}
+
 html, body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Poppins', Helvetica, Arial, sans-serif;
 }
 
 a, .btn-link {

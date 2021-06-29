@@ -5,17 +5,7 @@
 @inject NavigationManager NavigationManager
 
 <div>
-    @if (AuthenticationService.IsUserLoggedIn)
-    {
-        <h1>Welcome</h1>
-    }
-    else
-    {
-        <a href="/login">Login</a>
-    }
-    <div>
-        @Body
-    </div>
+    @Body
 </div>
 @code {
     

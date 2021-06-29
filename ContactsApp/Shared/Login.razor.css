@@ -1,0 +1,63 @@
+﻿.main-layout {
+    box-shadow: 1px 5px 14px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    width: 35ch;
+    padding: 2em;
+}
+.body {
+    display: flex;
+    flex-direction: column;
+}
+.options-tab {
+    display: flex;
+    gap: 0.5em;
+    height: 15%;
+}
+.option {
+    font-size: 1.125rem;
+    font-weight: 100;
+    color: var(--secondary-dark-color)
+}
+.option.selected {
+    font-weight: bold;
+    color: var(--dark-color);
+}
+.forms-layout {
+    display: flex;
+    height: 10rem;
+    margin-top: 1.5em;
+    margin-bottom: 2.25em;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.forms-layout > * {
+    display: block;
+}
+input, input:focus, input:focus-within {
+    border: none;
+    outline: none;
+}
+
+
+input {
+    color: var(--dark-color);
+    border-bottom: 0.1em solid var(--dark-color);
+    margin-top: 0.75em;
+}
+input:focus {
+    border-bottom: 0.1em solid var(--dark-color);
+}
+
+.action-button {
+    background: var(--dark-color);
+    color: var(--light-color);
+    border-radius: 1.1em;
+    letter-spacing: 0.1em;
+    padding: 0.25em 0;
+    text-transform: capitalize;
+    border: none;
+    box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.25);
+}
+.action-button:hover {
+    box-shadow: -1px 1px 4px rgba(0, 0, 0, 0.25);
+}

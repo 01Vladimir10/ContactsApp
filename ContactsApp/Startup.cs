@@ -14,6 +14,7 @@ using Microsoft.Extensions.Hosting;
 using ContactsApp.Data;
 using ContactsApp.Utils;
 using Database.Services;
+using Domain.Data;
 using Domain.Identity;
 using Domain.Model;
 using FaunaAuthentication.Services;
@@ -42,6 +43,8 @@ namespace ContactsApp
             
             services.AddSingleton<IUserManager<AppUser>>(new UserManager<AppUser>(apiKey));
             services.AddSingleton<IAuthenticationService<AppUser>>(new AuthenticationService<AppUser>(manager, apiKey, CreateCustomHttpClient()));
+            // Contacts services...
+            services.AddSingleton<IContactsService>(new ContactsService(apiKey, client: CreateCustomHttpClient()));
         }
 
         private HttpClient CreateCustomHttpClient() => new(new MessageHandler(new HttpClientHandler()));

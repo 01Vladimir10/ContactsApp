@@ -90,6 +90,22 @@ using ContactsApp.Shared;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 24 "D:\Users\Vladimir\RiderProjects\ContactsApp\ContactsApp\Pages\Index.razor"
+       
+    public string Username { get; set; }
+    public string Password { get; set; }
+    public string ErrorMessage { get; set; }
+
+    private void Login()
+    {
+        throw new NotImplementedException();
+    }
+
+
+#line default
+#line hidden
+#nullable disable
     }
 }
 #pragma warning restore 1591

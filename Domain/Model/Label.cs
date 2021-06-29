@@ -6,6 +6,10 @@ namespace Domain.Model {
 
         public string Description { get; set; }
 
+        public override string ToString()
+        {
+            return $"{nameof(LabelId)}: {LabelId}, {nameof(Color)}: {Color}, {nameof(Description)}: {Description}";
+        }
     }
 
 }

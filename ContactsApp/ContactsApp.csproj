@@ -7,4 +7,7 @@
     <ProjectReference Include="..\Domain\Domain.csproj" />
     <ProjectReference Include="..\FaunaAuthentication\FaunaAuthentication.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Components" />
+  </ItemGroup>
 </Project>

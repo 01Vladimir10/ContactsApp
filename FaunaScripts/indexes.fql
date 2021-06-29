@@ -25,15 +25,28 @@ Do(
             ]
         }
     ),
+    //contacts_by_userid_and_state
     CreateIndex(
         {
             name: 'contacts_by_userid',
-            unique: true,
             serialized: true,
             source: Collection("Contacts"),
             terms: [
                 {
                 field: ["data", "UserId"]
+                }
+            ]
+        }
+    ),
+    CreateIndex(
+        {
+            name: 'contacts_by_userid_and_state',
+            serialized: true,
+            source: Collection("Contacts"),
+            terms: [
+                {
+                field: ["data", "UserId"],
+                field: ["data", "IsDeleted"],
                 }
             ]
         }
